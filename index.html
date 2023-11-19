@@ -1,0 +1,31 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <meta charset="UTF-8">  
+    <title>生成手机号码</title>  
+    <script>  
+        function generatePhoneNumber() {  
+            // 生成11位手机号码，前8位为数字，后3位为字母（ABC）  
+            var phoneNumber = '';  
+            for (var i = 0; i < 8; i++) {  
+                phoneNumber += Math.floor(Math.random() * 10);  
+            }  
+            phoneNumber += 'ABC';  
+              
+            // 将生成的号码追加到文本框中  
+            var phoneNumbers = document.getElementById('phoneNumbers').value;  
+            if (phoneNumbers === '') {  
+                phoneNumbers += phoneNumber;  
+            } else {  
+                phoneNumbers += ',' + phoneNumber;  
+            }  
+            document.getElementById('phoneNumbers').value = phoneNumbers;  
+        }  
+    </script>  
+</head>  
+<body>  
+    <h1>生成手机号码</h1>  
+    <input type="text" id="phoneNumbers" placeholder="输入手机号码" />  
+    <button onclick="generatePhoneNumber()">生成</button>  
+</body>  
+</html>
