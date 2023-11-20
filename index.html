@@ -1,31 +1,32 @@
-<!DOCTYPE html>  
-<html>  
-<head>  
-    <meta charset="UTF-8">  
-    <title>生成手机号码</title>  
-    <script>  
-        function generatePhoneNumber() {  
-            // 生成11位手机号码，前8位为数字，后3位为字母（ABC）  
-            var phoneNumber = '';  
-            for (var i = 0; i < 8; i++) {  
-                phoneNumber += Math.floor(Math.random() * 10);  
-            }  
-            phoneNumber += 'ABC';  
-              
-            // 将生成的号码追加到文本框中  
-            var phoneNumbers = document.getElementById('phoneNumbers').value;  
-            if (phoneNumbers === '') {  
-                phoneNumbers += phoneNumber;  
-            } else {  
-                phoneNumbers += ',' + phoneNumber;  
-            }  
-            document.getElementById('phoneNumbers').value = phoneNumbers;  
-        }  
-    </script>  
-</head>  
-<body>  
-    <h1>生成手机号码</h1>  
-    <input type="text" id="phoneNumbers" placeholder="输入手机号码" />  
-    <button onclick="generatePhoneNumber()">生成</button>  
-</body>  
+<!DOCTYPE html>
+<html>
+<head>
+    <title>工具站</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">主页</a></li>
+            <li><a href="#">工具 1</a></li>
+            <li><a href="#">工具 2</a></li>
+            <li><a href="#">工具 3</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>工具站</h1>
+        <p>这是一个通用的工具站模板，您可以根据自己的需求添加工具和功能。</p>
+        <form action="/api/tool" method="get">
+            <label for="tool">选择工具:</label>
+            <select id="tool" name="tool">
+                <option value="tool1">工具 1</option>
+                <option value="tool2">工具 2</option>
+                <option value="tool3">工具 3</option>
+            </select>
+            <input type="submit" value="使用工具">
+        </form>
+        <div id="result"></div>
+    </main>
+    <script src="script.js"></script>
+</body>
 </html>
